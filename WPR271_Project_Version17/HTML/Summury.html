@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/Styling.css">
+    <title>Personal Information</title>
+    <script src="../Javascript/node.js"></script>
+</head>
+
+
+
+<body> 
+    <h1>Captured Information</h1>
+    <p><strong >First Name:</strong> <p id="firstName"></p></p>
+    <p><strong >Last Name:</strong> <p id="lastName"></p></p>
+    <p><strong >Email:</strong><p id="Email"></p> </p>
+    <p><strong >Username:</strong> <p id="userName"></p></p>
+    <p><strong >Country:</strong><p id="Country"></p> </p>
+    <p><strong >State:</strong> <p id="State"></p></p>
+    <p><strong >City:</strong> <p id="City"></p></p>
+    <p><strong >Phone Number:</strong><p id="phoneNumber"></p> </p>
+    <p><strong >Reference Code:</strong> <p id="referenceCode"></p></p>
+
+<!-- <p id="firstName"></p> 
+<p id="lastName"></p>
+<p id="Email"></p>
+<p id="userName"></p>
+<p id="Country"></p>
+<p id="State"></p>
+<p id="City"></p>
+<p id="phoneNumber"></p>
+<p id="referenceCode"></p> -->
+</body>
+
+<script> 
+  const userData = new Array (localStorage.getItem("userData"));
+  let joinedData = userData.join();
+  const splitData = joinedData.split(",");
+
+  let first_name =splitData[0];
+  let last_name =splitData[1];
+  let email_id =splitData[2];
+  let username =splitData[3];
+  let country =splitData[4];
+  let state =splitData[5];
+  let city =splitData[6];
+  let phone_number =splitData[7];
+  let reference_code =splitData[8];
+
+  for (var i = 0; i < splitData.length; i++) {
+    console.log(splitData[i]);}
+    
+          document.getElementById("firstName").innerHTML = first_name;
+          document.getElementById("lastName").innerHTML = last_name;
+          document.getElementById("Email").innerHTML = email_id;
+          document.getElementById("userName").innerHTML = username;
+          document.getElementById("Country").innerHTML = country;
+          document.getElementById("State").innerHTML = state;
+          document.getElementById("City").innerHTML = city;
+          document.getElementById("phoneNumber").innerHTML = phone_number;
+          document.getElementById("referenceCode").innerHTML = reference_code;
+  </script>
+
+</html>
